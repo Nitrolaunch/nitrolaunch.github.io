@@ -3,10 +3,181 @@
 
 <head>
 	<title>Nitrolaunch</title>
+	<link rel="stylesheet" href="/main.css" />
+	<script src="/main.js"></script>
 </head>
 
 <body>
-	
+	<div data-include="components/header.html"></div>
+	<div class="cont fullwidth bold" id="hero">
+		<div id="hero-background"></div>
+		<div id="hero-gradient"></div>
+		<div class="cont" id="hero-text">
+			<div id="hero-text-background"></div>
+			<div id="hero-text-text">
+				A Minecraft Launcher for the future.
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<div class="cont col fullwidth">
+		<div class="cont col" style="width:85%">
+			<div class="cont section left">
+				<div class="cont col section-text">
+					<div class="cont start section-text-big">
+						Works with both clients and servers
+					</div>
+					<div class="cont start section-text-small">
+						Both can be set up and launched from the same place
+					</div>
+				</div>
+				<div class="cont">
+					<img class="cont section-image" src="/assets/screenshots/instances.png" />
+				</div>
+			</div>
+			<div class="cont section right">
+				<div class="cont">
+					<img class="cont section-image" src="/assets/screenshots/plugins.png" />
+				</div>
+				<div class="cont col section-text">
+					<div class="cont end section-text-big">
+						Innovative plugin system
+					</div>
+					<div class="cont end section-text-small">
+						Extend the launcher with features like new modloaders, new sources for mods, translations for other
+						languages, tools to enhance your productivity, and more!
+					</div>
+				</div>
+			</div>
+			<div class="cont section left">
+				<div class="cont col section-text">
+					<div class="cont start section-text-big">
+						Modern packaging
+					</div>
+					<div class="cont start section-text-small">
+						Install mods, datapacks, shaders, and more from sources like Modrinth and Smithed
+					</div>
+				</div>
+				<div class="cont">
+					<img class="cont section-image" src="/assets/screenshots/gui_packages.png" />
+				</div>
+			</div>
+			<div class="cont section right">
+				<div class="cont">
+					<img class="cont section-image" src="/assets/screenshots/launch.gif" />
+				</div>
+				<div class="cont col section-text">
+					<div class="cont end section-text-big">
+						Fast CLI
+					</div>
+					<div class="cont end section-text-small">
+						Access all the features of the launcher from a performant Rust-based CLI
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+<style>
+	#hero {
+		height: 90vh;
+		font-size: 2.5rem;
+
+		position: relative;
+	}
+
+	#hero-background {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+
+		width: 100%;
+		height: 100%;
+
+		background-image: url("assets/screenshots/package_page.png");
+		background-size: cover;
+		background-position: center -60px;
+		filter: blur(2px);
+		opacity: 65%;
+	}
+
+	#hero-gradient {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+
+		width: 100%;
+		height: 110%;
+
+		background-image: linear-gradient(transparent, var(--bg));
+	}
+
+	#hero-text {
+		position: relative;
+		/* text-shadow: 0px 0px 2px black; */
+	}
+
+	#hero-text-text {
+		z-index: 3;
+		position: relative;
+	}
+
+	#hero-text-background {
+		position: absolute;
+		top: -3rem;
+		width: 100vw;
+		height: 100%;
+		padding: 3rem 0px;
+
+		background-image: radial-gradient(black, black, transparent, transparent, transparent);
+		z-index: 2;
+	}
+
+	.section {
+		width: 100%;
+		display: grid;
+		height: 35rem;
+	}
+
+	.section.left {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.section.right {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.section-text-big {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.section-text-small {
+		font-size: 1.1rem;
+		color: var(--fg2);
+	}
+
+	.section.left>.section-text {
+		align-items: flex-start;
+		padding-left: 3rem;
+	}
+
+	.section.right>.section-text {
+		align-items: flex-end;
+		padding-right: 3rem;
+		text-align: right;
+	}
+
+	.section-image {
+		object-fit: cover;
+		width: 40rem;
+		height: 30rem;
+
+		border: var(--border) solid var(--bg3);
+		border-radius: var(--round2);
+	}
+</style>
 
 </html>
