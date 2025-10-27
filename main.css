@@ -67,6 +67,10 @@ body {
 	font-weight: bold;
 }
 
+.rel {
+	position: relative;
+}
+
 .link:active,
 .link:hover,
 .link:visited,
