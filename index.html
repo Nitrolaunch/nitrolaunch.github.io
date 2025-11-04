@@ -38,8 +38,10 @@
 						Play with friends
 					</div>
 					<div class="cont start section-text-small">
-						Nitrolaunch supports both clients and servers, and you can export your configuration as a code with one
-						click to synchronize your experience
+						<ul>
+							<li>Create server instances that work just like clients</li>
+							<li>Export your configuration as a code to synchronize your mods and settings</li>
+						</ul>
 					</div>
 					<img class="section-text-background" src="/assets/screenshots/instances.png" />
 				</div>
@@ -58,8 +60,11 @@
 						Innovative plugin system
 					</div>
 					<div class="cont end section-text-small">
-						Extend the launcher with features like new modloaders, new sources for mods, translations for other
-						languages, tools to enhance your productivity, and more!
+						<ul>
+							<li>Add new loaders and addon sources</li>
+							<li>Change the launcher appearance with custom themes</li>
+							<li>Extend the launcher with features like file backups, easier configuration, new icons, and more!</li>
+						</ul>
 					</div>
 					<img class="section-text-background" src="/assets/screenshots/plugins.png" />
 				</div>
@@ -98,7 +103,7 @@
 					<div class="cont section-text-big">
 						Get started today!
 					</div>
-					<div class="cont section-text-small">
+					<div class="cont col section-text-small">
 						<a class="cont link" id="download-button" href="https://github.com/Nitrolaunch/nitrolaunch/releases/latest">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
 								<path
@@ -239,6 +244,16 @@
 	.section-text-small {
 		font-size: 1.35rem;
 		color: var(--fg2);
+	}
+
+	.section-text-small ul {
+		margin: 0;
+		padding: 0;
+		list-style-position: inside;
+	}
+
+	.section.right .section-text-small ul {
+		text-align: right;
 	}
 
 	.section-text {
