@@ -28,8 +28,6 @@
 	<br />
 	<br />
 	<br />
-	<br />
-	<br />
 	<div class="cont col fullwidth">
 		<div class="cont col" style="width:100%">
 			<div class="cont section left">
@@ -54,7 +52,7 @@
 			</div>
 			<div class="cont section right">
 				<div class="cont start rel section-image-container">
-					<img class="cont section-image" src="/assets/screenshots/plugins.png" style="object-position: center -5px" />
+					<img class="cont section-image" src="/assets/screenshots/plugins.png" style="object-position: center 2px" />
 					<div class="section-gradient"></div>
 				</div>
 				<div class="cont col section-text" style="--grad1:var(--plugin);--grad2:var(--fg)">
@@ -247,7 +245,7 @@
 </body>
 <style>
 	#hero {
-		height: 90vh;
+		height: 50rem;
 		font-size: 2.5rem;
 
 		position: relative;
@@ -394,23 +392,21 @@
 		padding-left: 1rem;
 	}
 
-	.section.left .section-gradient {
+	.section-gradient {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 
+		transition: opacity 0.5s;
+	}
+
+	.section.left .section-gradient {
 		background-image: linear-gradient(90deg, transparent, transparent, var(--bg));
 	}
 
 	.section.right .section-gradient {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
 		background-image: linear-gradient(90deg, var(--bg), transparent, transparent);
 	}
 
@@ -422,6 +418,10 @@
 		border-radius: var(--round2);
 		border: var(--border) solid var(--bg3);
 		border-top-color: var(--bg4);
+
+		box-shadow: 0.5rem 0.5rem 0.5rem var(--bg0);
+
+		transition: transform 0.5s;
 	}
 
 	.section.left .section-image {
@@ -431,6 +431,16 @@
 
 	.section.right .section-image {
 		transform: perspective(10rem) rotateY(3deg);
+	}
+
+	/* Hover to make the image visible */
+
+	.section-image-container:hover>.section-image {
+		transform: perspective(10rem) rotateY(0deg);
+	}
+
+	.section-image-container:hover>.section-gradient {
+		opacity: 0%;
 	}
 
 	.section-image-container {
@@ -565,9 +575,9 @@
 	for (let elem of document.getElementsByClassName("feature")) {
 		elem.addEventListener("mouseenter", featureHover);
 		elem.addEventListener("mouseleave", featureUnhover);
+		// For mobile devices
+		elem.addEventListener("click", featureHover);
 	}
-
-	// previewContainer.addEventListener("click", () => previewContainer.style.display = "none");
 </script>
 
 </html>
